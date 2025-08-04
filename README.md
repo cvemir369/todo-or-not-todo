@@ -21,29 +21,45 @@ A modern, responsive Todo application built with React, TypeScript, and Tailwind
 - **Tailwind CSS** - Utility-first CSS framework
 - **Vite** - Fast development build tool
 
-🎯 Key Learning Objectives
+## 🚀 Getting Started
+
+```bash
+# Clone the repository
+git clone git@github.com:cvemir369/todo-or-not-todo.git
+
+# Navigate to project directory
+cd todo-or-not-todo
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+## 🎯 Key Learning Objectives
+
 This project demonstrates:
 
-Modern React patterns with hooks (useState, useEffect)
-TypeScript integration in React applications
-Component composition and prop drilling
-Local storage management
-CSS-in-JS with Tailwind utilities
-Client-side routing implementation
-Event handling and state management
+- Modern React patterns with hooks (useState, useEffect)
+- TypeScript integration in React applications
+- Component composition and prop drilling
+- Local storage management
+- CSS-in-JS with Tailwind utilities
+- Client-side routing implementation
+- Event handling and state management
 
-### 🔧 Available Scripts
+## 🔧 Available Scripts
 
-`npm run dev` - Start development server
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-`npm run build` - Build for production
-
-`npm run preview` - Preview production build
-
-`npm run lint` - Run ESLint
-
-### 📝 License
+## 📝 License
 
 MIT License - feel free to use this project for learning and development.
 
-Practice makes perfect. Every Todo is a step towards mastery. 🚀
+---
+
+**Practice makes perfect. Every Todo is a step towards mastery.** 🚀
