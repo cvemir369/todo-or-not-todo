@@ -31,12 +31,19 @@ Local storage management
 CSS-in-JS with Tailwind utilities
 Client-side routing implementation
 Event handling and state management
-🔧 Available Scripts
-npm run dev - Start development server
-npm run build - Build for production
-npm run preview - Preview production build
-npm run lint - Run ESLint
-📝 License
+
+### 🔧 Available Scripts
+
+`npm run dev` - Start development server
+
+`npm run build` - Build for production
+
+`npm run preview` - Preview production build
+
+`npm run lint` - Run ESLint
+
+### 📝 License
+
 MIT License - feel free to use this project for learning and development.
 
 Practice makes perfect. Every Todo is a step towards mastery. 🚀
