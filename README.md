@@ -23,6 +23,8 @@ A modern, responsive Todo application built with React, TypeScript, and Tailwind
 
 ## 🚀 Getting Started
 
+Live Demo: [https://todo-or-not-todo-cvemir369.netlify.app/](https://todo-or-not-todo-cvemir369.netlify.app/)
+
 ```bash
 # Clone the repository
 git clone git@github.com:cvemir369/todo-or-not-todo.git
