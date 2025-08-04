@@ -1,69 +1,42 @@
-# React + TypeScript + Vite
+# 📃 Todo React TypeScript Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive Todo application built with React, TypeScript, and Tailwind CSS. Features a clean interface with local storage persistence and intuitive user interactions.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Add Todos**: Create new tasks with a simple input form
+- **Toggle Completion**: Click on any todo to mark it as complete/incomplete
+- **Edit Todos**: In-place editing with modal interface
+- **Delete Todos**: Remove unwanted todos with hover-to-reveal delete buttons
+- **Local Storage**: All data persists locally - no backend required
+- **Responsive Design**: Clean, modern UI built with Tailwind CSS
+- **TypeScript**: Fully typed for better development experience
+- **React Router**: Multi-page navigation with active link highlighting
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React 18** - Component-based UI library
+- **TypeScript** - Type-safe JavaScript
+- **React Router** - Client-side routing
+- **Tailwind CSS** - Utility-first CSS framework
+- **Vite** - Fast development build tool
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+🎯 Key Learning Objectives
+This project demonstrates:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Modern React patterns with hooks (useState, useEffect)
+TypeScript integration in React applications
+Component composition and prop drilling
+Local storage management
+CSS-in-JS with Tailwind utilities
+Client-side routing implementation
+Event handling and state management
+🔧 Available Scripts
+npm run dev - Start development server
+npm run build - Build for production
+npm run preview - Preview production build
+npm run lint - Run ESLint
+📝 License
+MIT License - feel free to use this project for learning and development.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Practice makes perfect. Every Todo is a step towards mastery. 🚀
