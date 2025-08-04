@@ -8,7 +8,7 @@ export default function Footer() {
           href="https://github.com/cvemir369"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:underline"
+          className="hover:underline mr-1"
         >
           cvemir369
         </a>

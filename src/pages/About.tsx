@@ -11,6 +11,17 @@ export default function About() {
       <p>Enjoy using the Todo app!</p>
       <p>Practice makes perfect.</p>
       <p>Every Todo is a step towards mastery.</p>
+      <p>
+        Repo:{" "}
+        <a
+          href="https://github.com/cvemir369/todo-or-not-todo.git"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline"
+        >
+          https://github.com/cvemir369/todo-or-not-todo.git
+        </a>
+      </p>
     </div>
   );
 }
