@@ -62,4 +62,4 @@ MIT License - feel free to use this project for learning and development.
 
 ---
 
-**Practice makes perfect. Every Todo is a step towards mastery.** 🚀
+**Practice makes perfect. Every Todo is a step towards mastery.** 🚀☕🍺
