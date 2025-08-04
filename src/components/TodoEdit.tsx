@@ -29,7 +29,7 @@ export default function TodoEdit({ todo, onEdit }: TodoEditProps) {
 
   return (
     <>
-      <div
+      <button
         title="Edit"
         className="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"
         onClick={(e) => {
@@ -38,7 +38,7 @@ export default function TodoEdit({ todo, onEdit }: TodoEditProps) {
         }}
       >
         ✏️
-      </div>
+      </button>
 
       {/* Modal */}
       {isModalOpen && (
