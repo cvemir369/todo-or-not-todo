@@ -65,7 +65,15 @@ export default function Home() {
         <h1 className="text-3xl font-bold mb-4">Todo List</h1>
         <TodoAdd setTodosList={setTodosList} />
         {todosList.length === 0 && (
-          <div className="m-2">No todos available</div>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <div className="m-2">No todos available</div>
+            <button
+              className="p-2 bg-blue-500 text-white rounded-xl hover:bg-blue-400 transition-colors cursor-pointer"
+              onClick={() => setTodosList(todos)}
+            >
+              Load Default Todos
+            </button>
+          </div>
         )}
         <ul>
           {todosList.map((todo) => (
