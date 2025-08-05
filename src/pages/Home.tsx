@@ -10,6 +10,18 @@ export default function Home() {
   const [todosList, setTodosList] = useState<Todo[]>(
     JSON.parse(localStorage.getItem("todos")!) || todos
   );
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedTodo, setSelectedTodo] = useState<Todo | null>(null);
+
+  function openModal(todo: Todo) {
+    setSelectedTodo(todo);
+    setIsModalOpen(true);
+  }
+
+  function closeModal() {
+    setIsModalOpen(false);
+    setSelectedTodo(null);
+  }
 
   // Function to toggle the completed state of a todo
   function invertCompleted(todoId: number) {
@@ -48,39 +60,54 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4 mt-8">
-      <h1 className="text-2xl font-bold mb-4">Todo List</h1>
-      <TodoAdd setTodosList={setTodosList} />
-      {todosList.length === 0 && <div>No todos available</div>}
-      <ul>
-        {todosList.map((todo) => (
-          <li
-            key={todo.id}
-            className="flex items-center gap-4 my-2 group p-2 relative hover:text-neutral-400"
-          >
-            <button
-              onClick={() => invertCompleted(todo.id)}
-              className="text-xl cursor-pointer"
-              title={todo.completed ? "Mark as incomplete" : "Mark as complete"}
+    <>
+      <div className="flex flex-col items-center justify-center gap-4 mt-8">
+        <h1 className="text-2xl font-bold mb-4">Todo List</h1>
+        <TodoAdd setTodosList={setTodosList} />
+        {todosList.length === 0 && <div>No todos available</div>}
+        <ul>
+          {todosList.map((todo) => (
+            <li
+              key={todo.id}
+              className="flex items-center gap-4 my-2 group p-2 relative hover:text-neutral-400"
             >
-              {todo.completed ? <LuCircleCheckBig /> : <LuCircle />}
-            </button>
+              <button
+                onClick={() => invertCompleted(todo.id)}
+                className="text-xl cursor-pointer"
+                title={
+                  todo.completed ? "Mark as incomplete" : "Mark as complete"
+                }
+              >
+                {todo.completed ? <LuCircleCheckBig /> : <LuCircle />}
+              </button>
 
-            <span
-              title="Click to edit or delete"
-              className={`cursor-pointer ${
-                todo.completed ? "line-through" : ""
-              }`}
-              onClick={() => {
-                console.log("open edit modal");
-              }}
-            >
-              {todo.task}
-            </span>
-            <TodoEdit todo={todo} onEdit={editTodo} onDelete={deleteTodo} />
-          </li>
-        ))}
-      </ul>
-    </div>
+              <span
+                title="Click to edit or delete"
+                className={`cursor-pointer ${
+                  todo.completed ? "line-through" : ""
+                }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  openModal(todo);
+                }}
+              >
+                {todo.task}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      {/* Modal */}
+      {isModalOpen && selectedTodo && (
+        <TodoEdit
+          todo={selectedTodo}
+          onEdit={editTodo}
+          onDelete={deleteTodo}
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          closeModal={closeModal}
+        />
+      )}
+    </>
   );
 }
