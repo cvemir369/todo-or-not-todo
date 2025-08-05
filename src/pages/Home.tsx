@@ -56,7 +56,7 @@ export default function Home() {
           <li
             key={todo.id}
             onClick={() => invertCompleted(todo.id)}
-            className="flex gap-4 my-2 cursor-pointer group p-2 relative hover:text-neutral-400"
+            className="flex gap-4 my-2 group p-2 relative hover:text-neutral-400"
           >
             <span
               title={
@@ -64,7 +64,9 @@ export default function Home() {
                   ? "Click to mark as incomplete"
                   : "Click to mark as complete"
               }
-              className={todo.completed ? "line-through" : ""}
+              className={`cursor-pointer ${
+                todo.completed ? "line-through" : ""
+              }`}
             >
               {todo.task}
             </span>

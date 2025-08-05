@@ -31,7 +31,7 @@ export default function TodoEdit({ todo, onEdit }: TodoEditProps) {
     <>
       <button
         title="Edit"
-        className="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"
+        className="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 cursor-pointer"
         onClick={(e) => {
           e.stopPropagation();
           openModal();
