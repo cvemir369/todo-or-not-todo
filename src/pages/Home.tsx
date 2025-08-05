@@ -62,9 +62,11 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col items-center justify-center gap-4 mt-8">
-        <h1 className="text-2xl font-bold mb-4">Todo List</h1>
+        <h1 className="text-3xl font-bold mb-4">Todo List</h1>
         <TodoAdd setTodosList={setTodosList} />
-        {todosList.length === 0 && <div>No todos available</div>}
+        {todosList.length === 0 && (
+          <div className="m-2">No todos available</div>
+        )}
         <ul>
           {todosList.map((todo) => (
             <li
@@ -96,6 +98,14 @@ export default function Home() {
             </li>
           ))}
         </ul>
+        {todosList.length !== 0 && (
+          <button
+            className="p-2 bg-red-950 text-white px-5 rounded-xl hover:bg-red-600 transition-colors cursor-pointer"
+            onClick={() => setTodosList([])}
+          >
+            Delete All
+          </button>
+        )}
       </div>
       {/* Modal */}
       {isModalOpen && selectedTodo && (
