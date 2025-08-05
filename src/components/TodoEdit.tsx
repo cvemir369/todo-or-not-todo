@@ -4,9 +4,10 @@ import type { Todo } from "../types/types";
 interface TodoEditProps {
   todo: Todo;
   onEdit: (todoId: number, newTask: string) => void;
+  onDelete: (todoId: number) => void;
 }
 
-export default function TodoEdit({ todo, onEdit }: TodoEditProps) {
+export default function TodoEdit({ todo, onEdit, onDelete }: TodoEditProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editText, setEditText] = useState(todo.task);
 
@@ -31,7 +32,7 @@ export default function TodoEdit({ todo, onEdit }: TodoEditProps) {
     <>
       <button
         title="Edit"
-        className="opacity-100 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 cursor-pointer"
+        className="cursor-pointer"
         onClick={(e) => {
           e.stopPropagation();
           openModal();
@@ -50,7 +51,7 @@ export default function TodoEdit({ todo, onEdit }: TodoEditProps) {
             className="bg-neutral-800 p-6 rounded-lg shadow-lg w-96 max-w-90vw"
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-lg font-bold  mb-4">Edit Todo</h2>
+            <h2 className="text-lg font-bold  mb-4">Edit or Delete Todo</h2>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -59,20 +60,31 @@ export default function TodoEdit({ todo, onEdit }: TodoEditProps) {
                 className="w-full border p-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 autoFocus
               />
-              <div className="flex gap-2 justify-end">
+              <div className="flex justify-between items-center">
                 <button
-                  type="button"
-                  onClick={handleCancel}
+                  onClick={(e) => {
+                    onDelete(todo.id);
+                    e.stopPropagation();
+                  }}
                   className="px-4 py-2 rounded-xl hover:text-neutral-500 hover:cursor-pointer"
                 >
-                  Cancel
+                  Delete
                 </button>
-                <button
-                  type="submit"
-                  className="px-4 py-2 rounded-xl hover:text-neutral-500 hover:cursor-pointer"
-                >
-                  Save
-                </button>
+                <div className="flex gap-2 justify-end">
+                  <button
+                    type="button"
+                    onClick={handleCancel}
+                    className="px-4 py-2 rounded-xl hover:text-neutral-500 hover:cursor-pointer"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-4 py-2 rounded-xl hover:text-neutral-500 hover:cursor-pointer"
+                  >
+                    Save
+                  </button>
+                </div>
               </div>
             </form>
           </div>

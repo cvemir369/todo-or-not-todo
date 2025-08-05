@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { todos } from "../api/todos";
 import TodoAdd from "../components/TodoAdd";
-import TodoDelete from "../components/TodoDelete";
 import TodoEdit from "../components/TodoEdit";
 import type { Todo } from "../types/types";
+import { LuCircleCheckBig } from "react-icons/lu";
+import { LuCircle } from "react-icons/lu";
 
 export default function Home() {
   const [todosList, setTodosList] = useState<Todo[]>(
@@ -55,23 +56,28 @@ export default function Home() {
         {todosList.map((todo) => (
           <li
             key={todo.id}
-            onClick={() => invertCompleted(todo.id)}
-            className="flex gap-4 my-2 group p-2 relative hover:text-neutral-400"
+            className="flex items-center gap-4 my-2 group p-2 relative hover:text-neutral-400"
           >
+            <button
+              onClick={() => invertCompleted(todo.id)}
+              className="text-xl cursor-pointer"
+              title={todo.completed ? "Mark as incomplete" : "Mark as complete"}
+            >
+              {todo.completed ? <LuCircleCheckBig /> : <LuCircle />}
+            </button>
+
             <span
-              title={
-                todo.completed
-                  ? "Click to mark as incomplete"
-                  : "Click to mark as complete"
-              }
+              title="Click to edit or delete"
               className={`cursor-pointer ${
                 todo.completed ? "line-through" : ""
               }`}
+              onClick={() => {
+                console.log("open edit modal");
+              }}
             >
               {todo.task}
             </span>
-            <TodoEdit todo={todo} onEdit={editTodo} />
-            <TodoDelete todoId={todo.id} onDelete={deleteTodo} />
+            <TodoEdit todo={todo} onEdit={editTodo} onDelete={deleteTodo} />
           </li>
         ))}
       </ul>
