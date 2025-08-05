@@ -47,8 +47,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-4">
-      <h1 className="text-2xl font-bold">Todo List</h1>
+    <div className="flex flex-col items-center justify-center gap-4 mt-8">
+      <h1 className="text-2xl font-bold mb-4">Todo List</h1>
       <TodoAdd setTodosList={setTodosList} />
       {todosList.length === 0 && <div>No todos available</div>}
       <ul>

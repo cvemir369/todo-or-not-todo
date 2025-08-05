@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen gap-4">
+    <div className="flex flex-col items-start md:items-center justify-center gap-4 mt-8">
       <h1 className="text-2xl font-bold">Todo React TypeScript Project</h1>
       <p>No backend implemented, all data is stored in Local Storage.</p>
       <p>
