@@ -1,7 +1,7 @@
 export default function About() {
   return (
     <div className="flex flex-col items-start md:items-center justify-center gap-4 mt-8">
-      <h1 className="text-2xl font-bold">Todo React TypeScript Project</h1>
+      <h1 className="text-2xl font-bold mb-4">Todo React TypeScript Project</h1>
       <p>No backend implemented, all data is stored in Local Storage.</p>
       <p>
         This project is a simple Todo application built with React and
