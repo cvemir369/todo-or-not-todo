@@ -69,13 +69,7 @@ export default function Home() {
               {todo.task}
             </span>
             <TodoEdit todo={todo} onEdit={editTodo} />
-            <div
-              title="Delete"
-              className="opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <TodoDelete todoId={todo.id} onDelete={deleteTodo} />
-            </div>
+            <TodoDelete todoId={todo.id} onDelete={deleteTodo} />
           </li>
         ))}
       </ul>
