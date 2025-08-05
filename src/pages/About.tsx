@@ -10,7 +10,7 @@ import { SiBuymeacoffee } from "react-icons/si";
 
 export default function About() {
   return (
-    <div className="flex flex-col justify-center gap-4 mt-8">
+    <div className="flex flex-col justify-center gap-4 mt-8 animate-fade-in">
       <h1 className="text-3xl font-bold mb-4 text-center">
         About This Small Project
       </h1>

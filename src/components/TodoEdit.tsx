@@ -51,7 +51,7 @@ export default function TodoEdit({
       onClick={handleCancel}
     >
       <div
-        className="bg-neutral-800 p-6 rounded-lg shadow-lg w-96 max-w-90vw"
+        className="bg-neutral-800 p-6 rounded-lg shadow-lg w-96 max-w-90vw animate-fade-in"
         onClick={(e) => e.stopPropagation()}
       >
         <h2 className="text-lg font-bold  mb-4">Edit or Delete Todo</h2>

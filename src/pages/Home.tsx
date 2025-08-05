@@ -61,7 +61,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-4 mt-8">
+      <div className="flex flex-col items-center justify-center gap-4 mt-8 animate-fade-in">
         <h1 className="text-3xl font-bold mb-4">Todo List</h1>
         <TodoAdd setTodosList={setTodosList} />
         {todosList.length === 0 && (
@@ -79,7 +79,7 @@ export default function Home() {
           {todosList.map((todo) => (
             <li
               key={todo.id}
-              className="flex items-center gap-4 my-2 group p-2 relative hover:text-neutral-400"
+              className="animate-fade-in flex items-center gap-4 my-2 group p-2 relative hover:text-neutral-400"
             >
               <button
                 onClick={() => invertCompleted(todo.id)}
