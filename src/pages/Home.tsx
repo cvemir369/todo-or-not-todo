@@ -68,7 +68,7 @@ export default function Home() {
           <div className="flex flex-col items-center justify-center gap-4">
             <div className="m-2">No todos available</div>
             <button
-              className="p-2 bg-blue-500 text-white rounded-xl hover:bg-blue-400 transition-colors cursor-pointer"
+              className="p-2 bg-blue-500 text-white rounded-xl hover:bg-blue-400 active:scale-95 transition-colors cursor-pointer"
               onClick={() => setTodosList(todos)}
             >
               Load Default Todos
@@ -108,7 +108,7 @@ export default function Home() {
         </ul>
         {todosList.length !== 0 && (
           <button
-            className="p-2 bg-red-950 text-white px-5 rounded-xl hover:bg-red-600 transition-colors cursor-pointer"
+            className="p-2 bg-red-950 text-white px-5 rounded-xl hover:bg-red-600 active:scale-95 transition-colors cursor-pointer"
             onClick={() => setTodosList([])}
           >
             Delete All

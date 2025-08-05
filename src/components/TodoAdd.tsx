@@ -34,7 +34,7 @@ export default function TodoAdd({ setTodosList }: TodoAddProps) {
         />
         <button
           type="submit"
-          className="bg-neutral-700 text-white px-5 rounded-xl hover:bg-neutral-600 transition-colors cursor-pointer"
+          className="bg-neutral-700 text-white px-5 rounded-xl hover:bg-neutral-600 active:scale-95 transition-colors cursor-pointer"
         >
           Add
         </button>
