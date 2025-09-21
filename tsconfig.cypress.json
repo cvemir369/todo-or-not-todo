@@ -3,6 +3,8 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["es6", "dom"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "types": ["cypress", "node"]
   },
   "include": ["**/*.ts", "cypress/**/*.ts"]
